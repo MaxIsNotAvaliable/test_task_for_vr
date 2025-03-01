@@ -1,17 +1,6 @@
 #include "sorts.h"
 #include "autotests.h"
 
-/*
-Цель:
-Создать простое консольное приложение C++, которое сортирует 
-один и тот же массив объектов с помощью нескольких потоков и 
-соответствует следующим требованиям:
-•	В разных потоках разные алгоритмы сортировки
-•	После каждой сортировки выводится результат в консоль
-•	Реализованы автотесты с разными тестовыми данными, демонстрирующими 
-    работу приложения при различных граничных условиях задачи
-*/
-
 #pragma region ARRAY_UTILS
 
 std::vector<int> GenerateVector(size_t size)
@@ -56,17 +45,17 @@ int main(int argc, char* argv[])
 
 	auto start = std::chrono::high_resolution_clock::now();
 
-	// Сортировка массива
+	// Г‘Г®Г°ГІГЁГ°Г®ГўГЄГ  Г¬Г Г±Г±ГЁГўГ 
 	sorts::MultiThreadSort(vec);
 
 	auto stop = std::chrono::high_resolution_clock::now();
 	auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(stop - start);
 
-	// Вывод массива
+	// Г‚Г»ГўГ®Г¤ Г¬Г Г±Г±ГЁГўГ 
 	PrintArray(vec, false);
 	printf("%lld msec\n", duration.count());
 
-	// Запуск тестов
+	// Г‡Г ГЇГіГ±ГЄ ГІГҐГ±ГІГ®Гў
 	autotests::RunTests();
 
 	return 0;
